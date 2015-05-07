@@ -2,12 +2,12 @@ xcodebuild -alltargets clean
 
 rm -rf "./JenkinsBuild/*"
 
-xcodebuild -target HelloJenkins PROVISIONING_PROFILE="00000000-0000-0000-0000-000000000000" CONFIGURATION_BUILD_DIR=JenkinsBuild
+xcodebuild -target Hello Jenkins PROVISIONING_PROFILE="f90443f8-f1e2-46bf-9fd5-063419a3b060" CONFIGURATION_BUILD_DIR=JenkinsBuild
 
 rm -rf "./JenkinsArchive/*"
 
-xcodebuild -scheme HelloJenkins archive PROVISIONING_PROFILE="00000000-0000-0000-0000-000000000000" CODE_SIGN_IDENTITY="iPhone Developer: Justin Hyland (XXXXXXXXXX)" -archivePath ./JenkinsArchive/HelloJenkins.xcarchive
+xcodebuild -scheme Hello Jenkins archive PROVISIONING_PROFILE="f90443f8-f1e2-46bf-9fd5-063419a3b060" CODE_SIGN_IDENTITY="iPhone Distribution: Nichapat Samaisut (F6UN72J869)" -archivePath ./JenkinsArchive/Hello Jenkins.xcarchive
 
 rm -rf "./JenkinsIPAExport/*"
 
-xcodebuild -exportArchive -exportFormat IPA -exportProvisioningProfile iOS\ Team\ Provisioning\ Profile:\ com.yourAPP.HelloJenkins -archivePath ./JenkinsArchive/HelloJenkins.xcarchive -exportPath ./JenkinsIPAExport/HelloJenkins.ipa
+xcodebuild -exportArchive -exportFormat IPA -exportProvisioningProfile iOS\ Team\ Provisioning\ Profile:\ com.igetweb.Hello-Jenkins -archivePath ./JenkinsArchive/HelloJenkins.xcarchive -exportPath ./JenkinsIPAExport/Hello Jenkins.ipa
